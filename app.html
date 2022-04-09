@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Hunito: A Coding Project by Mac Beamish</title>
+    <title>Your Gauge Mortgage Calculator: A Coding Project by Mac Beamish</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +26,7 @@
 <!-- Nav -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand brand-nav" href="index.html"><img src="img/white-on-red-logo-only.png" class="pb-1" height="25" alt="logo-icon"> APP NAME</a>
+        <a class="navbar-brand brand-nav" href="index.html"><img src="img/white-on-red-logo-only.png" class="pb-1" height="25" alt="logo-icon"> YOURGAUGE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -57,9 +57,49 @@
     <main class="flex-shrink-0">
         <div class="container">
             <div class="row row-cols-1 row-cols-lg-2">
-                <div class="col">
+                <div class="col-lg-4 col border-end border-2">
+                    <h1 class="display-5 fw-bold 1h-1 mb-3">YourGauge Mortgage Calculator:</h1>
+                    <h4 class="lead">
+                         A <strong>JavaScript</strong> project that helps you calculate your monthly home loan repayments!
+                       
+                    </h4>
+                    <h2>Instructions</h2>
+                    <p>
+                       Enter your loan details including loan amount, term, and interest rate, then hit Go! to see your repayment schedule.
+                        
+                    </p>
                 </div>
-                <div class="col">     
+                <div class="col-lg-8 col">   
+                    <div>
+                        <h5>Enter Your Loan Details</h5>
+                        <form class="row gy-2 gx-3" action="">
+                            <div class="col">
+                                <label for="loanValue">The amount of money loaned in dollars. <br> (Balance)  </label>
+                                <input id="loanValue" type="number" class="form-control p-1" placeholder="Loan Amount"  aria-label="Loan Amount Value">                                                           
+                            </div>
+                            <div class="col">
+                                <label for="termValue">The time over which the loan will be repaid, in years. <br> (Term) <br></label>
+                                <input id="termValue" type="number" class="form-control p-1" placeholder="Loan Term"  aria-label="Loan Term Value">
+                            </div>
+                            <div class="col">
+                                <label for="rateValue">The percentage rate at which interest will accrue on the loan. (Rate)</label>
+                                <input id="rateValue" type="number" class="form-control p-1" placeholder="Interest Rate"   aria-label="Loan Rate Value">
+                            </div>
+                            <div class="col-12 d-flex">
+                                <div class="pt-2">
+                                    <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Go!</button>
+                                </div>
+                            </div>
+                        </form> 
+                        <h2 class="mt-5 border-bottom border-2"> Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <tbody id="results">
+                                    <!-- Results go here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>  
                 </div>
             </div>     
         </div>
@@ -91,6 +131,9 @@
          integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
      </script>
      <script src="/js/site.js"></script>
+     <script>
+     document.getElementById("btnSubmit").addEventListener("click",getValues);
+    </script>
  </body>
  
  </html>
